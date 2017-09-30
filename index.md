@@ -1,8 +1,7 @@
 
 ## javascript 闭包
-
-    官方定义：JavaScript语言采用词法作用域，也就是说函数执行时所依赖的变量是在函数定义时决定的，而非运行时。为了实现词法作用域，JavaScript函数对象内部状态除了包含函数的代码逻辑，还必须包含当前作用域链的引用。函数对象通过作用域链关联起来，函数体内部的所有变量都可以保存在作用域内，这种特性称之为闭包；
-    简单来讲，闭包是一个能够访问其他函数内部变量的函数。
+官方定义：JavaScript语言采用词法作用域，也就是说函数执行时所依赖的变量是在函数定义时决定的，而非运行时。为了实现词法作用域，JavaScript函数对象内部状态除了包含函数的代码逻辑，还必须包含当前作用域链的引用。函数对象通过作用域链关联起来，函数体内部的所有变量都可以保存在作用域内，这种特性称之为闭包；
+简单来讲，闭包是一个能够访问其他函数内部变量的函数。
 ### 相关概念  
 
 作用域链：   
@@ -69,19 +68,19 @@ foo是一个全局变量，test函数中的foo，foo2作用域仅在test函数�
 ```
 
 3. 私有化变量  
-  **eg**
-  ```javascript
-    for(var i = 0; i<domList.length; i++){
-      domList[i].onClick = function(){
-        function click(){
-          var index = i;
-          alert(index);
-          return index;
-        }
-        return click
+**eg**
+```javascript
+  for(var i = 0; i<domList.length; i++){
+    domList[i].onClick = function(){
+      function click(){
+        var index = i;
+        alert(index);
+        return index;
       }
+      return click
     }
-  ```
+  }
+```
   
 
 
